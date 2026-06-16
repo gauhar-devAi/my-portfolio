@@ -1,0 +1,428 @@
+:root {
+  --bg-primary: #0a0a0a;
+  --accent:     #00BCD4;
+  --text-white: #ffffff;
+  --text-muted: #aaaaaa;
+  --bg-card:    #141414;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-white);
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ── Navbar ── */
+#mainNav {
+  background-color: #000000;
+   padding: 14px 0;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6); 
+}
+
+ a.logo{
+ 
+  color: var(--accent);
+  font-weight: 700;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-size: 40px;
+
+}
+ a.logo:hover{
+  color: aqua;
+}
+
+.navbar-nav .nav-link {
+  color: var(--text-white);
+  font-weight: 400;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+  
+  
+}
+
+
+.navbar-nav .nav-link:hover {
+  color: var(--accent);
+}
+
+
+.navbar-toggler {
+  border: 2px solid var(--accent);
+  padding: 6px 10px;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+
+.navbar-collapse {
+  background-color: #000000;
+  padding: 10px 20px;
+}
+
+/* yeh condition laptop desktop k liye  */
+@media (min-width: 992px) {
+  .navbar-collapse {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+
+/* Hero section starts here */
+
+#hero{
+  min-height: 100vh;
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.content-hero{
+  padding-top: 80px;
+}
+
+.intro-sub{
+    font-size: 20px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+
+}
+
+.content-hero h1{
+  font-size: 55px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+
+.content-hero h2{
+    
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 65px;
+
+}
+
+/* jab do inline-block elements (jaise buttons ya links) sath likhe jayein, toh CSS unke beech automatic gap nahi banati. */
+
+.hero-btn{
+  display: flex;
+  gap: 25px;
+}
+
+/* Button 1 — Filled */
+.btn-primary-custom {
+  background-color: var(--accent);
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+.btn-primary-custom:hover{
+  background-color: aqua;
+
+}
+
+/* Button 2 — Outlined */
+.btn-outline-custom {
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+.btn-outline-custom:hover{
+  background-color: aqua;
+  color: black;
+}
+
+.img-dev img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+
+/* Skills Section Main Styling */
+#skills {
+  background-color: #111010; /* Deep Dark Background */
+  padding: 80px 0;
+  color: #ffffff;
+}
+
+.section-title {
+  color: #00f2fe; /* Cyan Heading Color */
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.skill-header span {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Grey Background Bar */
+.skill-bar {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  height: 8px;
+  margin-bottom: 25px;
+  overflow: hidden; /* Rounded corners se color bahar na nikalne ke liye */
+}
+
+/* Cyan Glowing Fill Bar */
+.skill-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00c6ff, #00f2fe); /* Smooth Cyan Gradient */
+  width: 0%; /* Shuru mein 0% rahega jab tak scroll na ho */
+  transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1); /* Premium Animation Transition */
+}
+
+
+
+
+
+
+
+/* project section starts here */
+/* ── Projects Section ── */
+#projects {
+  background-color: #0a0a0a; /* Sync with main body background */
+   padding: 100px 0px; 
+}
+
+/* Card Container Styling */
+.project-card {
+  
+  background-color: var(--bg-card);
+  border: 1px solid #222222;
+  border-radius: 16px;
+  overflow: hidden; /* Image ke top corners round rakhne ke liye */
+  /* object-fit: cover; */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Card Hover Premium Effect */
+.project-card:hover {
+  transform: translateY(-10px); /* Card thoda sa upar uchega */
+  border-color: var(--accent); /* Border automatically glow karegi cyan color mein */
+  box-shadow: 0 15px 40px rgba(0, 188, 212, 0.15); /* Light cyan glow effect shadow */
+}
+
+
+/* Image Frame */
+.project-img-wrapper{
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  border-bottom: 1px solid #222222;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Image stretch nahi hogi */
+  transition: transform 0.6s ease;
+}
+
+
+/* Image zooms slightly inside the frame when card is hovered */
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+/* Card Content Area */
+.project-card-body {
+  padding: 30px;
+}
+
+.project-card-body h4 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text-white);
+  letter-spacing: 0.5px;
+}
+
+.project-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+
+/* Links & Buttons Flex Layout */
+.project-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* Choti screens par button automatically neeche shift ho jayenge */
+}
+
+/* Adjusting existing buttons for icon spacing inside project section */
+.project-links .btn-primary-custom,
+.project-links .btn-outline-custom {
+  text-decoration: none;
+  /* Element par display: inline-flex; lagane ki wajah yeh hoti hai ke aap element ko bahaar se inline rakhna chahte hain aur andar se flexbox banana chahte hain.Agar aap sirf display: flex; lagate, to woh element Block-level ban jata. */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Icon aur text ke beech thoda fasla */
+}
+
+
+/* contact and footer */
+/* ── Contact Section ── */
+#contact {
+  background-color: #0b0b0b;
+  padding: 100px 0;
+}
+
+.para-p{
+  color: gray;
+}
+
+.contact-links-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Base Style for Contact Buttons */
+.contact-btn {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 30px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+
+.whatsapp-btn {
+  background-color: #25D366; /* WhatsApp Green */
+  color: #ffffff;
+}
+
+.whatsapp-btn:hover {
+  background-color: #20ba56;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+}
+
+/* Email Specific Styling (Using your portfolio Cyan Accent) */
+.email-btn {
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.email-btn:hover {
+  background-color: var(--accent);
+  color: #000000;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 188, 212, 0.2);
+}
+
+
+
+
+
+/* Browser ko instruction mil rahi hai ke "Is bracket ke andar jo bhi CSS likhi hai, usay tab tak CHUPAO jab tak screen ka size 576px (yaani tablet ya laptop) tak na pohnch jaye. Mobile par isko ignore kar do." */
+
+
+/* Tablet aur Laptop standard horizontal alignment */
+@media (min-width: 576px) {
+  .contact-links-wrapper {
+
+    /* flex-direction: row;: Mobile par default setting upar-neeche ki hoti hai (column). Lekin jaise hi screen 576px se badi hogi, yeh row ban jayega. row ka matlab hai ek hi line mein aamne-saamne kharay ho jao. */
+
+    flex-direction: row; /* Mobile pe upar niche, tablet/laptop par aamne saamne */
+    justify-content: center;
+  }
+  .contact-btn {
+
+    /* flex: 1;: Iska matlab hai "Barabar ka hissa". Yeh dono buttons ko aapas mein mubahesa karne se rokta hai aur browser ko kehta hai ke dono buttons ko bilkul ek jaisi, barabar chaurai (width) do. Aisa nahi hoga ke WhatsApp bada ho jaye aur Email chota.
+
+    max-width: 250px;: Iska matlab hai "Ziyada se ziyada chaurai". Humne flex: 1 de kar buttons ko khulne ki ijazat to de di, lekin agar monitor ki screen bohot bari hui, to buttons phail kar ajeeb lamba rasta ban jate. Is liye humne hadd laga di ke "Bhai jitna bhi dil chahe phail jao, lekin 250px se bade mat hona." */
+
+
+    flex: 1; /* Dono buttons ko barabar size milega */
+    max-width: 250px;
+  }
+}
+
+/* ── Footer Section ── */
+.footer-section {
+  background-color: #050505; /* Full pitch black footer */
+  padding: 40px 0;
+  border-top: 1px solid #111111;
+}
+
+.footer-socials .social-icon {
+
+  /* Saare icons ko ek hi line mein (aamne-saamne) rakhna tha.
+  Har icon ke dabba (circle) ke andar jo 'F' ya 'Instagram' ka logo hai, usay bilkul darmiyan (center) mein fit karna tha. */
+
+
+  /* Agar aap sirf display: flex likhte, to Flexbox ka asool hai ke wo poori line gher leta hai (block-level element ban jata hai). Iska nuksan yeh hota ke aapka Facebook ka icon pehli line par aata, Instagram ka automatic uske niche doosri line par chala jata. */
+
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  background-color: #111111;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 0 10px;
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-socials .social-icon:hover {
+  color: #000000;
+  background-color: var(--accent); /* Hover pe portfolio color link */
+  transform: scale(1.1);
+}
+
+ .footer-copyright p {
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 0;
+} 
