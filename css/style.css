@@ -22,6 +22,10 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
+html {
+  scroll-behavior: smooth; /* Puray page par smooth scrolling apply karega */
+}
+
 /* ── Navbar ── */
 #mainNav {
   background-color: #000000;
@@ -122,11 +126,18 @@ h1, h2, h3 {
 
 }
 
+
+
 /* jab do inline-block elements (jaise buttons ya links) sath likhe jayein, toh CSS unke beech automatic gap nahi banati. */
 
 .hero-btn{
   display: flex;
   gap: 25px;
+}
+
+/* Hero section key buttons adjustment wrapper se clear kiya */
+.hero-btn a {
+  text-decoration: none;
 }
 
 /* Button 1 — Filled */
@@ -426,3 +437,83 @@ h1, h2, h3 {
   color: #555555;
   margin-bottom: 0;
 } 
+
+
+/* ── MOBILE RESPONSIVENESS TUNING (Max-width: 768px) ── */
+@media (max-width: 768px) {
+  
+  /* 1. Hero Section Alignment & Padding */
+  #hero {
+    min-height: auto;
+    padding: 100px 0 50px 0; /* Top navbar se space aur bottom spacing */
+    text-align: center;
+  }
+
+  .content-hero {
+    padding-top: 0;
+    margin-bottom: 40px;
+  }
+
+  /* 2. Mobile Typography Resize (Bohot baray fonts mobile par kharab lagte hain) */
+  .content-hero h1 {
+    font-size: 36px; /* 55px se chota kiya */
+    margin-bottom: 20px;
+  }
+
+  .content-hero h2 {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .intro-sub {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  /* 3. Hero Buttons Center Alignment */
+  .hero-btn {
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Agar screen bohot choti ho to buttons upar-neeche ho jayenge */
+  }
+  
+  .hero-btn a, .hero-btn button {
+    width: 100%; /* Mobile par full-width buttons zyada premium lagte hain */
+    max-width: 280px;
+  }
+
+  /* 4. Developer Image Layout Fix */
+  .img-dev img {
+    max-width: 85%; /* Image screen se bahar na niklay aur margin balanced rahe */
+    margin: 0 auto;
+  }
+
+  /* 5. Sections Spacing Adjustment */
+  #skills, #projects, #contact {
+    padding: 60px 0 !important; /* Mobile par padding kam ki taake faltu scroll na karna pare */
+  }
+
+  .section-title {
+    font-size: 28px !important;
+    margin-bottom: 35px !important;
+  }
+
+  /* 6. Project Card Mobile Optimization */
+  .project-img-wrapper {
+    height: 220px; /* Mobile screen par image ki height choti ki taake text nazar aaye */
+  }
+
+  .project-card-body {
+    padding: 20px;
+  }
+
+  .project-links {
+    flex-direction: column; /* Buttons ko upar-neeche kiya mobile par */
+    gap: 10px;
+  }
+
+  .project-links a {
+    width: 100%;
+    justify-content: center; /* Text aur icon center ho jayein */
+  }
+}
